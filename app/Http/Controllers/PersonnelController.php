@@ -27,6 +27,7 @@ class PersonnelController extends Controller
     public function create()
     {
         //
+        return view('modules.personnel.create');
     }
 
     /**
