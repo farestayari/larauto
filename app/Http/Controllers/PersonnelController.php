@@ -4,19 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Personnel;
 use Illuminate\Http\Request;
+use App\User;
+use Auth;
 
 class PersonnelController extends Controller
 {
+    
+    public function __construct()
+  {
+      $this->middleware('auth');
+  }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
-
-        return view('modules.personnel.index');
+//        $personnels = Personnel::all();
+         $personnels = Personnel :: where('user_id', Auth::id())->get();
+        return view('modules.personnel.index',['personnels'=>$personnels]);
     }
 
     /**
@@ -39,6 +48,8 @@ class PersonnelController extends Controller
     public function store(Request $request)
     {
         //
+        Personnel::create($request->all());
+        return redirect('personnel');
     }
 
     /**

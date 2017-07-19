@@ -33,20 +33,22 @@
                 
             </tr>        
         </tfoot>
+        @if($personnels)
         <tbody>
+           @foreach($personnels as $personnel)
             <tr>
-                <td>[data]</td>
-                <td>[data]</td>
-                <td>[data]</td>
-                <td>[data]</td>
-                <td>[data]</td>
+                <td>{{$personnel->nom}}</td>
+                <td>{{$personnel->prenom}}</td>
+                <td>{{$personnel->adress}}</td>
+                <td>{{$personnel->cin}}</td>
+                <td>{{$personnel->telephone}}</td>
                 <th><a class="btn btn-info fa fa-edit" href="#"></a>
                 <a class="btn btn-info fa fa-trash" href="#"></a> </th>
             </tr>
-            
+            @endforeach
         </tbody>
+        @endif
     </table>
-
                 </div>
             </div>
         </div>
