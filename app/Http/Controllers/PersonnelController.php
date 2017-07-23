@@ -72,6 +72,7 @@ class PersonnelController extends Controller
     public function edit(Personnel $personnel)
     {
         //
+        
     }
 
     /**
