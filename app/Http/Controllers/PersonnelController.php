@@ -6,6 +6,7 @@ use App\Personnel;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Session;
 
 class PersonnelController extends Controller
 {
@@ -87,7 +88,10 @@ class PersonnelController extends Controller
     {
         //
             $personnels = Personnel :: find($personnel->id)->update($request->all());
-            return redirect('modules.personnel.index');
+        
+            Session::flash('success_msg', 'the personnel is edited !');
+        
+            return redirect('personnel');
     }
 
     /**
@@ -99,5 +103,16 @@ class PersonnelController extends Controller
     public function destroy(Personnel $personnel)
     {
         //
+//        Personnel::delete();
+        
+         if(Personnel::destroy($personnel)) {
+    return redirect('personnel')->with('success', 'The image has been successfully deleted!');
+  } else {
+    return redirect('personnel')->with('error', 'Please try again!');
+  }
+                
+
+        
+
     }
 }

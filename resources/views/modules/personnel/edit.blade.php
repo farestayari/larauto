@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Mes personnels</div>
                 <div class="panel-body">
-				  {!! Form::open(['method'=>'post','action'=>['PersonnelController@update',$personnels->id]]) !!}
+				  {!! Form::open(['method'=>'put','action'=>['PersonnelController@update',$personnels->id]]) !!}
       <div class="form-group">
          {!! Form::hidden('user_id',Auth::user()->id) !!}
       </div>

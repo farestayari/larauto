@@ -8,6 +8,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Mes personnels
                                     <a class="btn btn-info fa fa-plus" href="{{route('personnel.create')}}">Ajouter</a> 
+                  @if(Session::has('success_msg'))
+                    <div class="alert alert-success">{{ Session::get('success_msg') }}</div>
+                @endif
                                            
                 </div>
                 <div class="panel-body">
@@ -43,7 +46,9 @@
                 <td>{{$personnel->cin}}</td>
                 <td>{{$personnel->telephone}}</td>
                 <th><a class="btn btn-info fa fa-edit" href="{{ route('personnel.edit',$personnel) }}"></a>
-                <a class="btn btn-info fa fa-trash" href="#"></a> </th>
+                <a class="btn btn-info fa fa-trash" href="{{route('personnel.destroy',$personnel)}}"></a>
+                  {{ method_field('DELETE') }}
+              </th>
             </tr>
             @endforeach
         </tbody>

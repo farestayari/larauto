@@ -4,8 +4,18 @@
 @section('content')
 <div class="container">
  <div class="row">
+<<<<<<< HEAD
           
      {!! Form::open(['method'=>'POST','action'=>'PersonnelController@store']) !!}
+=======
+
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Ajouter un personnel
+                </div>
+                <div class="panel-body">       
+                    {!! Form::open(['method'=>'POST','action'=>'PersonnelController@store']) !!}
+>>>>>>> 11585b3c428cff1f9ac8a148174c6403c53d7751
       <div class="form-group">
          {!! Form::hidden('user_id',Auth::user()->id) !!}
       </div>
@@ -33,7 +43,10 @@
         {!! Form::submit('creer', ['class'=>'btn btn-primary']) !!}
       </div>
 
-    {!! Form::close() !!}
+    {!! Form::close() !!} 
+                </div>
+                </div>
+               
                
                 </div>
 </div>
