@@ -42,7 +42,7 @@
                 <td>{{$personnel->adress}}</td>
                 <td>{{$personnel->cin}}</td>
                 <td>{{$personnel->telephone}}</td>
-                <th><a class="btn btn-info fa fa-edit" href="#"></a>
+                <th><a class="btn btn-info fa fa-edit" href="{{ route('personnel.edit',$personnel) }}"></a>
                 <a class="btn btn-info fa fa-trash" href="#"></a> </th>
             </tr>
             @endforeach

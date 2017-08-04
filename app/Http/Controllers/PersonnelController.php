@@ -72,6 +72,8 @@ class PersonnelController extends Controller
     public function edit(Personnel $personnel)
     {
         //
+       $personnel = Personnel::find($personnel->id);
+        return view('modules.personnel.edit',['personnels'=>$personnel]);
     }
 
     /**
@@ -84,6 +86,8 @@ class PersonnelController extends Controller
     public function update(Request $request, Personnel $personnel)
     {
         //
+            $personnels = Personnel :: find($personnel->id)->update($request->all());
+            return redirect('modules.personnel.index');
     }
 
     /**
