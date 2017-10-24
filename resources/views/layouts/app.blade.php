@@ -37,7 +37,7 @@
                 </div>
 
 
- 
+
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -57,8 +57,8 @@
                                         </a>
                                     </li>
                                 </ul>
-                          </li> 
-                       
+                          </li>
+
                           <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     Mes Candidats <span class="caret"></span>
@@ -66,8 +66,8 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="#">
-                                            Personneles
+                                        <a href="{{route('candidats')}}">
+                                            Candidats
                                         </a>
                                         <a href="#">
                                             Vehicules
@@ -77,7 +77,7 @@
                           </li>
                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Calendrier 
+                                    Calendrier
                                 </a>
                           </li>
                            <li class="dropdown">
@@ -112,7 +112,7 @@
                                     </li>
                                 </ul>
                           </li>
-                    @endif 
+                    @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -142,7 +142,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                         @endif

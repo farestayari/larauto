@@ -20,3 +20,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/personnel', 'PersonnelController');
+
+Route::get('/candidat', [
+  'uses' => 'CandidatController@index',
+  'as' =>'candidats'
+]);
+
+Route::get('/candidat/create',[
+  'uses'=>'CandidatController@create',
+  'as'=>'candidat.create'
+]);
+
+Route::post('/candidat/store',[
+  'uses'=>'CandidatController@store',
+  'as'=>'candidat.store'
+]);

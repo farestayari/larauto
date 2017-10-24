@@ -10,12 +10,12 @@ use Session;
 
 class PersonnelController extends Controller
 {
-    
+
     public function __construct()
   {
       $this->middleware('auth');
   }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -88,9 +88,9 @@ class PersonnelController extends Controller
     {
         //
             $personnels = Personnel :: find($personnel->id)->update($request->all());
-        
+
             Session::flash('success_msg', 'the personnel is edited !');
-        
+
             return redirect('personnel');
     }
 
@@ -100,19 +100,22 @@ class PersonnelController extends Controller
      * @param  \App\Personnel  $personnel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personnel $personnel)
+    public function destroy($personnel)
     {
         //
 //        Personnel::delete();
-        
-         if(Personnel::destroy($personnel)) {
+
+         if($personnel->delete()) {
     return redirect('personnel')->with('success', 'The image has been successfully deleted!');
   } else {
     return redirect('personnel')->with('error', 'Please try again!');
   }
-                
+    // $personnel = Personnel::find($id)
+    // $personnel->delete()
 
-        
+
+
+
 
     }
 }
