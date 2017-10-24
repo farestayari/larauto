@@ -96,6 +96,8 @@ class CandidatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidat = Candidat::find($id);
+        $candidat->delete();
+        return redirect()->back();
     }
 }

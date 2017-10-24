@@ -35,3 +35,8 @@ Route::post('/candidat/store',[
   'uses'=>'CandidatController@store',
   'as'=>'candidat.store'
 ]);
+
+Route::get('/candidat/delete/{id}',[
+  'uses'=>'CandidatController@destroy',
+  'as' =>'candidat.delete'
+]);
