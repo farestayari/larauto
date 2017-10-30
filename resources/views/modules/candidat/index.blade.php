@@ -56,7 +56,7 @@
                   <td>{{$candidat->categorie}}</td>
                   <td>{{$candidat->type}}</td>
                   <td>{{$candidat->date_naissance}}</td>
-                  <th><a class="btn btn-info fa fa-edit" href="#"></a>
+                  <th><a class="btn btn-info fa fa-user" href="{{ route('candidat.profile', ['id'=>$candidat->id]) }}"></a>
                   <a class="btn btn-info fa fa-trash" href="{{ route('candidat.delete', ['id'=>$candidat->id]) }}"></a>
 
                 </th>

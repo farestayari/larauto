@@ -2,29 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
-use Auth;
-use App\Candidat;
 use Illuminate\Http\Request;
 
-class CandidatController extends Controller
+class CandidateProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function __construct()
-   {
-       $this->middleware('auth');
-   }
-
-
     public function index()
     {
-      $candidats = Candidat :: where('user_id',Auth::id())->get();
-        return view ('modules.candidat.index',['candidats'=>$candidats]);
+        //
     }
 
     /**
@@ -34,7 +23,7 @@ class CandidatController extends Controller
      */
     public function create()
     {
-        return View('modules.candidat.create');
+        //
     }
 
     /**
@@ -45,20 +34,7 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        $candidat = Candidat::create([
-          'nom'=>$request->nom,
-          'prenom' => $request->prenom,
-          'cin' => $request->cin,
-          'date_naissance' => $request->date_naissance,
-          'adress' => $request->adress,
-          'nationalité' => $request->nationalité_id,
-          'categorie' => $request->categorie_id,
-          'telephone' => $request->telephone,
-          'type' => $request->type_id,
-          'user_id' => Auth::id()
-        ]);
-
-       return Redirect()->route('candidats');
+        //
     }
 
     /**
@@ -69,8 +45,7 @@ class CandidatController extends Controller
      */
     public function show($id)
     {
-        $candidat = Candidat :: find($id);
-        return view('modules.candidat.profile')->with('candidats',$candidat);
+        //
     }
 
     /**
@@ -104,8 +79,6 @@ class CandidatController extends Controller
      */
     public function destroy($id)
     {
-        $candidat = Candidat::find($id);
-        $candidat->delete();
-        return redirect()->back();
+        //
     }
 }

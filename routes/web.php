@@ -40,3 +40,8 @@ Route::get('/candidat/delete/{id}',[
   'uses'=>'CandidatController@destroy',
   'as' =>'candidat.delete'
 ]);
+
+Route::get('/candidat/profile/{id}',[
+  'uses' =>'CandidatController@show',
+  'as' =>'candidat.profile'
+]);
